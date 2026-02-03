@@ -1,0 +1,585 @@
+/* Admin Styles for WhatsApp Flotante */
+
+.whatsapp-flotante-admin {
+    max-width: 1200px;
+}
+
+/* Secciones */
+.wf-section {
+    background: #fff;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.wf-section h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.wf-section .description {
+    margin-bottom: 15px;
+    color: #646970;
+}
+
+/* Selector de icono */
+.wf-icon-selector {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.wf-icon-preview {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #ccd0d4;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f6f7f7;
+}
+
+.wf-icon-preview img {
+    max-width: 90px;
+    max-height: 90px;
+    object-fit: contain;
+}
+
+.wf-no-icon {
+    text-align: center;
+    color: #8c8f94;
+}
+
+.wf-no-icon .dashicons {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+}
+
+.wf-no-icon p {
+    margin: 5px 0 0;
+    font-size: 12px;
+}
+
+.wf-icon-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Contenedor de cuentas */
+#accounts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+/* Fila de cuenta */
+.wf-account-row {
+    border: 1px solid #dcdcde;
+    border-radius: 6px;
+    padding: 20px;
+    background: #f9f9f9;
+    transition: box-shadow 0.2s;
+}
+
+.wf-account-row:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.wf-account-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.wf-account-toggle {
+    flex-shrink: 0;
+    padding-top: 8px;
+}
+
+.wf-account-fields {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.wf-field-wide {
+    grid-column: 1 / -1;
+}
+
+.wf-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.wf-field input[type="text"] {
+    width: 100%;
+}
+
+.wf-field-help {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #666;
+    font-style: italic;
+}
+
+
+.wf-account-actions {
+    flex-shrink: 0;
+}
+
+/* Toggle Switch */
+.wf-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.wf-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.wf-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 26px;
+}
+
+.wf-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+.wf-switch input:checked+.wf-slider {
+    background-color: #25D366;
+}
+
+.wf-switch input:checked+.wf-slider:before {
+    transform: translateX(24px);
+}
+
+/* Horarios */
+.wf-account-schedules {
+    border-top: 1px solid #dcdcde;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.wf-account-schedules h4 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+}
+
+.wf-schedules-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.wf-schedule-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #dcdcde;
+    border-radius: 4px;
+}
+
+.wf-schedule-days {
+    flex: 1;
+}
+
+.wf-schedule-days label {
+    display: block;
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.wf-days-selector {
+    display: flex;
+    gap: 6px;
+}
+
+.wf-day-checkbox {
+    cursor: pointer;
+    user-select: none;
+}
+
+.wf-day-checkbox input {
+    display: none;
+}
+
+.wf-day-checkbox span {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border: 2px solid #dcdcde;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 12px;
+    transition: all 0.2s;
+}
+
+.wf-day-checkbox input:checked+span {
+    background: #25D366;
+    border-color: #25D366;
+    color: #fff;
+}
+
+.wf-day-checkbox:hover span {
+    border-color: #25D366;
+}
+
+.wf-schedule-times {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.wf-time-field {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.wf-time-field label {
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.wf-time-field input[type="time"] {
+    width: 100px;
+}
+
+.wf-schedule-actions {
+    flex-shrink: 0;
+}
+
+/* Botones */
+#add-account-btn {
+    margin-top: 10px;
+}
+
+.wf-add-schedule {
+    font-size: 13px;
+}
+
+.button .dashicons {
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.button-link-delete {
+    color: #b32d2e;
+    padding: 4px 8px;
+}
+
+.button-link-delete:hover {
+    color: #dc3232;
+}
+
+.button-link-delete .dashicons {
+    margin: 0;
+}
+
+/* Disclaimer */
+#disclaimer {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+    .wf-account-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .wf-schedule-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .wf-schedule-times {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .wf-time-field {
+        justify-content: space-between;
+    }
+
+    .wf-time-field input[type="time"] {
+        width: auto;
+        flex: 1;
+    }
+}
+
+/* Header Actions */
+.wf-header-actions {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Grid de Apariencia */
+.wf-appearance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.wf-column h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.description-small {
+    margin: 0 0 15px 0;
+    color: #666;
+    font-style: italic;
+    font-size: 13px;
+}
+
+/* Selector de posición compacto */
+.wf-position-selector-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wf-position-option-compact {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.wf-position-option-compact:hover {
+    background: #f8f9fa;
+    border-color: #ccc;
+}
+
+.wf-position-option-compact input[type="radio"] {
+    margin-right: 10px;
+}
+
+.wf-position-option-compact input[type="radio"]:checked+.wf-position-label {
+    font-weight: 600;
+    color: #25D366;
+}
+
+.wf-position-label {
+    flex: 1;
+}
+
+/* Mini preview */
+.wf-mini-preview {
+    width: 40px;
+    height: 30px;
+    background: #eee;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    position: relative;
+}
+
+.wf-mini-preview::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #25D366;
+    border-radius: 50%;
+}
+
+.wf-mini-bottom-right::after {
+    bottom: 3px;
+    right: 3px;
+}
+
+.wf-mini-bottom-left::after {
+    bottom: 3px;
+    left: 3px;
+}
+
+.wf-mini-top-right::after {
+    top: 3px;
+    right: 3px;
+}
+
+.wf-mini-top-left::after {
+    top: 3px;
+    left: 3px;
+}
+
+/* Responsive para el grid */
+@media (max-width: 782px) {
+    .wf-appearance-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+/* Pestañas */
+.wf-tabs-nav {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.wf-tab-link {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #555;
+    border: 1px solid transparent;
+    border-bottom: none;
+    margin-bottom: -1px;
+    border-radius: 4px 4px 0 0;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.wf-tab-link:hover {
+    background: #f8f9fa;
+    color: #000;
+}
+
+.wf-tab-link.active {
+    background: #fff;
+    border-color: #ccc;
+    border-bottom-color: #fff;
+    color: #25D366;
+}
+
+.wf-tab-link:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.wf-tab-content {
+    display: none;
+}
+
+.wf-tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Ajustes de márgenes */
+.wf-margins-settings {
+    margin-top: 20px;
+}
+
+.wf-margins-settings h4 {
+    margin: 0 0 15px 0;
+    font-size: 13px;
+    color: #444;
+}
+
+.wf-margins-row {
+    display: flex;
+    gap: 30px;
+}
+
+.wf-field-inline {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.wf-field-inline label {
+    font-size: 12px;
+    color: #666;
+    font-weight: 600;
+}
+
+.wf-input-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.wf-field-inline input[type="number"] {
+    width: 70px;
+}
+
+.wf-unit-selector {
+    min-width: 60px;
+}
+
+.wf-saved-value {
+    font-size: 11px;
+    color: #888;
+    background: #f0f0f1;
+    padding: 2px 6px;
+    border-radius: 3px;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+/* Breakpoints */
+.wf-breakpoints-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.wf-breakpoints-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.wf-breakpoint-input {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+}

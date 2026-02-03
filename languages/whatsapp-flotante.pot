@@ -1,0 +1,173 @@
+# Translation Template for WhatsApp Flotante
+# Copyright (C) 2024
+# This file is distributed under the same license as the WhatsApp Flotante plugin.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: WhatsApp Flotante 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-06 07:00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: whatsapp-flotante.php
+msgid "Este plugin requiere WordPress 5.0 o superior."
+msgstr ""
+
+msgid "Error de activación del plugin"
+msgstr ""
+
+#: includes/class-whatsapp-admin.php
+msgid "WhatsApp Flotante"
+msgstr ""
+
+msgid "No tienes permisos para acceder a esta página."
+msgstr ""
+
+msgid "No tienes permisos para realizar esta acción."
+msgstr ""
+
+msgid "Error de seguridad. Por favor, intenta de nuevo."
+msgstr ""
+
+msgid "¿Estás seguro de que quieres eliminar esta cuenta?"
+msgstr ""
+
+msgid "¿Estás seguro de que quieres eliminar este horario?"
+msgstr ""
+
+msgid "Seleccionar icono de WhatsApp"
+msgstr ""
+
+msgid "Usar esta imagen"
+msgstr ""
+
+msgid "D"
+msgstr ""
+
+msgid "L"
+msgstr ""
+
+msgid "M"
+msgstr ""
+
+msgid "X"
+msgstr ""
+
+msgid "J"
+msgstr ""
+
+msgid "V"
+msgstr ""
+
+msgid "S"
+msgstr ""
+
+#: admin/templates/settings-page.php
+msgid "Configuración guardada correctamente."
+msgstr ""
+
+msgid "Icono del botón flotante"
+msgstr ""
+
+msgid "Selecciona una imagen personalizada para el botón flotante de WhatsApp. Si no seleccionas ninguna, se usará el icono por defecto."
+msgstr ""
+
+msgid "Icono personalizado"
+msgstr ""
+
+msgid "Sin icono personalizado"
+msgstr ""
+
+msgid "Seleccionar imagen"
+msgstr ""
+
+msgid "Eliminar imagen"
+msgstr ""
+
+msgid "Cuentas de WhatsApp"
+msgstr ""
+
+msgid "Configura las cuentas de WhatsApp que se mostrarán en el botón flotante. Puedes añadir múltiples horarios para cada cuenta."
+msgstr ""
+
+msgid "Añadir cuenta"
+msgstr ""
+
+msgid "Aviso legal / Disclaimer"
+msgstr ""
+
+msgid "Texto opcional que se mostrará en el modal de WhatsApp (por ejemplo, información sobre protección de datos)."
+msgstr ""
+
+msgid "Guardar configuración"
+msgstr ""
+
+#: admin/templates/account-row.php
+msgid "Etiqueta"
+msgstr ""
+
+msgid "Ej: Ventas"
+msgstr ""
+
+msgid "Teléfono"
+msgstr ""
+
+msgid "Ej: +34612345678"
+msgstr ""
+
+msgid "Mensaje predeterminado"
+msgstr ""
+
+msgid "Ej: Hola, me gustaría obtener más información"
+msgstr ""
+
+msgid "Eliminar cuenta"
+msgstr ""
+
+msgid "Horarios de disponibilidad"
+msgstr ""
+
+msgid "Si no configuras horarios, la cuenta estará disponible siempre. Puedes añadir múltiples rangos horarios."
+msgstr ""
+
+msgid "Añadir horario"
+msgstr ""
+
+#: admin/templates/schedule-row.php
+msgid "Días"
+msgstr ""
+
+msgid "Desde"
+msgstr ""
+
+msgid "Hasta"
+msgstr ""
+
+msgid "Eliminar horario"
+msgstr ""
+
+#: public/templates/floating-button.php
+msgid "Abrir WhatsApp"
+msgstr ""
+
+msgid "WhatsApp"
+msgstr ""
+
+#: public/templates/modal.php
+msgid "Contacta con nosotros"
+msgstr ""
+
+msgid "Cerrar"
+msgstr ""
+
+msgid "Selecciona un contacto para iniciar la conversación:"
+msgstr ""
+
+msgid "Disponible ahora"
+msgstr ""
