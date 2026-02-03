@@ -15,7 +15,7 @@ if (!defined('WPINC')) {
 <div class="wrap whatsapp-flotante-admin">
     <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
 
-    <?php if (isset($_GET['updated']) && $_GET['updated'] === 'true'): ?>
+    <?php if (isset($_GET['updated']) && sanitize_text_field(wp_unslash($_GET['updated'])) === 'true'): ?>
         <div class="notice notice-success is-dismissible">
             <p><?php _e('Configuración guardada correctamente.', 'whatsapp-flotante'); ?></p>
         </div>
