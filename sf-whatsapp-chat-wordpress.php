@@ -14,12 +14,12 @@
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * 
- * Security: Este plugin implementa las mejores prácticas de seguridad de WordPress:
- * - Validación y sanitización de todas las entradas de usuario
- * - Protección CSRF mediante nonces en todos los formularios y AJAX
- * - Escape de salida en todas las plantillas
- * - Verificación de capacidades de usuario
- * - Validación de tipos de archivo para carga de imágenes
+ * Security: This plugin implements WordPress security best practices:
+ * - Validation and sanitization of all user inputs
+ * - CSRF protection via nonces in all forms and AJAX requests
+ * - Output escaping in all templates
+ * - User capability verification
+ * - File type validation for image uploads
  */
 
 

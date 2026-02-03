@@ -215,7 +215,7 @@ class WhatsApp_Settings
     {
         $width = absint($width);
         // Validar que el breakpoint sea menor que el de tablet
-        $tablet_breakpoint = get_option(self::OPTION_BREAKPOINT_TABLET, 1024);
+        $tablet_breakpoint = $this->get_breakpoint_tablet();
         if ($width >= $tablet_breakpoint) {
             $width = $tablet_breakpoint - 1;
         }

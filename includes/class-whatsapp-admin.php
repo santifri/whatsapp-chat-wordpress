@@ -49,8 +49,8 @@ class WhatsApp_Admin
      */
     public function track_click()
     {
-        // Verificar nonce
-        if (!isset($_POST['nonce']) || !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['nonce'])), 'whatsapp_flotante_nonce')) {
+        // Verificar nonce - wp_verify_nonce handles sanitization internally
+        if (!isset($_POST['nonce']) || !wp_verify_nonce(wp_unslash($_POST['nonce']), 'whatsapp_flotante_nonce')) {
             wp_send_json_error('Invalid nonce');
         }
 
@@ -239,10 +239,10 @@ class WhatsApp_Admin
             wp_die(__('No tienes permisos para realizar esta acción.', 'whatsapp-flotante'));
         }
 
-        // Verificar nonce
+        // Verificar nonce - wp_verify_nonce handles sanitization internally
         if (
             !isset($_POST['whatsapp_flotante_nonce']) ||
-            !wp_verify_nonce(sanitize_text_field(wp_unslash($_POST['whatsapp_flotante_nonce'])), 'whatsapp_flotante_save')
+            !wp_verify_nonce(wp_unslash($_POST['whatsapp_flotante_nonce']), 'whatsapp_flotante_save')
         ) {
             wp_die(__('Error de seguridad. Por favor, intenta de nuevo.', 'whatsapp-flotante'));
         }
