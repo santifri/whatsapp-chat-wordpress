@@ -310,9 +310,9 @@ class WhatsApp_Admin
         $breakpoint_adjusted = false;
         // Asegurar que tablet > mobile
         if ($breakpoint_tablet <= $breakpoint_mobile) {
-            // Si el usuario intenta establecer tablet <= mobile, usar valores estándar
+            // Si los valores no son válidos, establecer valores estándar
             $breakpoint_tablet = 1024;
-            $breakpoint_mobile = min($breakpoint_mobile, 768);
+            $breakpoint_mobile = 768;
             $breakpoint_adjusted = true;
         }
         
