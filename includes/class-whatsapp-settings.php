@@ -194,13 +194,7 @@ class WhatsApp_Settings
 
     public function save_breakpoint_tablet($width)
     {
-        $width = absint($width);
-        // Validar que el breakpoint sea mayor que el de mobile
-        $mobile_breakpoint = $this->get_breakpoint_mobile();
-        if ($width <= $mobile_breakpoint) {
-            $width = $mobile_breakpoint + 1;
-        }
-        return update_option(self::OPTION_BREAKPOINT_TABLET, $width);
+        return update_option(self::OPTION_BREAKPOINT_TABLET, absint($width));
     }
 
     /**
@@ -213,13 +207,7 @@ class WhatsApp_Settings
 
     public function save_breakpoint_mobile($width)
     {
-        $width = absint($width);
-        // Validar que el breakpoint sea menor que el de tablet
-        $tablet_breakpoint = $this->get_breakpoint_tablet();
-        if ($width >= $tablet_breakpoint) {
-            $width = $tablet_breakpoint - 1;
-        }
-        return update_option(self::OPTION_BREAKPOINT_MOBILE, $width);
+        return update_option(self::OPTION_BREAKPOINT_MOBILE, absint($width));
     }
 
     /**
@@ -457,8 +445,14 @@ class WhatsApp_Settings
             // Eliminar espacios y caracteres no permitidos, manteniendo solo + y dígitos
             $phone = preg_replace('/[^0-9+]/', '', $phone);
             
-            // Validar formato básico de teléfono internacional
-            if (empty($phone) || !preg_match('/^\+?\d{7,15}$/', $phone)) {
+            // Añadir + si no está presente para formato internacional de WhatsApp
+            if (!empty($phone) && $phone[0] !== '+') {
+                $phone = '+' . $phone;
+            }
+            
+            // Validar formato de teléfono internacional con código de país requerido
+            // WhatsApp requiere formato internacional: +[código país][número]
+            if (empty($phone) || !preg_match('/^\+\d{7,15}$/', $phone)) {
                 continue;
             }
 

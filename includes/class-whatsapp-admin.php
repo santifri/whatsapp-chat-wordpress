@@ -303,12 +303,18 @@ class WhatsApp_Admin
         $margin_side_unit_mobile = isset($_POST['margin_side_unit_mobile']) ? sanitize_text_field(wp_unslash($_POST['margin_side_unit_mobile'])) : 'px';
         $this->settings->save_margin_side_unit_mobile($margin_side_unit_mobile);
 
-        // Guardar Breakpoints
+        // Guardar Breakpoints con validación conjunta
         $breakpoint_tablet = isset($_POST['breakpoint_tablet']) ? intval($_POST['breakpoint_tablet']) : 1024;
-        $this->settings->save_breakpoint_tablet($breakpoint_tablet);
-
         $breakpoint_mobile = isset($_POST['breakpoint_mobile']) ? intval($_POST['breakpoint_mobile']) : 768;
-        $this->settings->save_breakpoint_mobile($breakpoint_mobile);
+        
+        // Asegurar que tablet > mobile
+        if ($breakpoint_tablet <= $breakpoint_mobile) {
+            $breakpoint_tablet = $breakpoint_mobile + 1;
+        }
+        
+        // Guardar ambos breakpoints
+        update_option(WhatsApp_Settings::OPTION_BREAKPOINT_TABLET, absint($breakpoint_tablet));
+        update_option(WhatsApp_Settings::OPTION_BREAKPOINT_MOBILE, absint($breakpoint_mobile));
 
         // Redirigir con mensaje de éxito
         wp_redirect(add_query_arg(
