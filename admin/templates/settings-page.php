@@ -23,7 +23,7 @@ if (!defined('WPINC')) {
 
     <?php if (isset($_GET['breakpoint_adjusted']) && sanitize_text_field(wp_unslash($_GET['breakpoint_adjusted'])) === 'true'): ?>
         <div class="notice notice-warning is-dismissible">
-            <p><?php _e('Nota: El breakpoint de Tablet fue ajustado automáticamente para ser mayor que el breakpoint de Móvil.', 'whatsapp-flotante'); ?></p>
+            <p><?php _e('Nota: Los breakpoints fueron ajustados automáticamente. El breakpoint de Tablet debe ser mayor que el de Móvil. Se han establecido valores estándar: Tablet 1024px, Móvil ≤768px.', 'whatsapp-flotante'); ?></p>
         </div>
     <?php endif; ?>
 

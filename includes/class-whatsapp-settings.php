@@ -446,7 +446,7 @@ class WhatsApp_Settings
             $phone = preg_replace('/[^0-9+]/', '', $phone);
             
             // Añadir + si no está presente para formato internacional de WhatsApp
-            if (!empty($phone) && $phone[0] !== '+') {
+            if (!empty($phone) && strlen($phone) > 0 && $phone[0] !== '+') {
                 $phone = '+' . $phone;
             }
             
