@@ -452,7 +452,8 @@ class WhatsApp_Settings
             
             // Validar formato de teléfono internacional con código de país requerido
             // WhatsApp requiere formato internacional: +[código país][número]
-            if (empty($phone) || !preg_match('/^\+\d{7,15}$/', $phone)) {
+            // Permite de 1 a 15 dígitos según estándar E.164
+            if (empty($phone) || !preg_match('/^\+\d{1,15}$/', $phone)) {
                 continue;
             }
 

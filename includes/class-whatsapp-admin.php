@@ -307,9 +307,11 @@ class WhatsApp_Admin
         $breakpoint_tablet = isset($_POST['breakpoint_tablet']) ? intval($_POST['breakpoint_tablet']) : 1024;
         $breakpoint_mobile = isset($_POST['breakpoint_mobile']) ? intval($_POST['breakpoint_mobile']) : 768;
         
+        $breakpoint_adjusted = false;
         // Asegurar que tablet > mobile
         if ($breakpoint_tablet <= $breakpoint_mobile) {
             $breakpoint_tablet = $breakpoint_mobile + 1;
+            $breakpoint_adjusted = true;
         }
         
         // Guardar ambos breakpoints
@@ -317,11 +319,18 @@ class WhatsApp_Admin
         update_option(WhatsApp_Settings::OPTION_BREAKPOINT_MOBILE, absint($breakpoint_mobile));
 
         // Redirigir con mensaje de éxito
+        $redirect_args = array(
+            'page' => 'whatsapp-flotante',
+            'updated' => 'true',
+        );
+        
+        // Añadir parámetro si se ajustaron los breakpoints
+        if ($breakpoint_adjusted) {
+            $redirect_args['breakpoint_adjusted'] = 'true';
+        }
+        
         wp_redirect(add_query_arg(
-            array(
-                'page' => 'whatsapp-flotante',
-                'updated' => 'true',
-            ),
+            $redirect_args,
             admin_url('options-general.php')
         ));
         exit;
