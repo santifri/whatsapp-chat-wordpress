@@ -280,9 +280,17 @@ class WhatsApp_Settings
     {
         $attachment_id = absint($attachment_id);
 
-        // Verificar que el attachment existe
-        if ($attachment_id > 0 && !wp_attachment_is_image($attachment_id)) {
-            return false;
+        // Verificar que el attachment existe y es una imagen
+        if ($attachment_id > 0) {
+            if (!wp_attachment_is_image($attachment_id)) {
+                return false;
+            }
+            
+            // Verificar que el attachment pertenece al sitio actual
+            $post = get_post($attachment_id);
+            if (!$post || $post->post_type !== 'attachment') {
+                return false;
+            }
         }
 
         return update_option(self::OPTION_CUSTOM_ICON, $attachment_id);
