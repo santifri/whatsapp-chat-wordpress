@@ -13,6 +13,13 @@
  * Requires PHP: 7.2
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ * 
+ * Security: This plugin implements WordPress security best practices:
+ * - Validation and sanitization of all user inputs
+ * - CSRF protection via nonces in all forms and AJAX requests
+ * - Output escaping in all templates
+ * - User capability verification
+ * - File type validation for image uploads
  */
 
 
@@ -24,7 +31,7 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 // Definir constantes del plugin
-define( 'WHATSAPP_FLOTANTE_VERSION', '1.0.0' );
+define( 'WHATSAPP_FLOTANTE_VERSION', '1.0.1' );
 define( 'WHATSAPP_FLOTANTE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WHATSAPP_FLOTANTE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'WHATSAPP_FLOTANTE_PLUGIN_BASENAME', plugin_basename( __FILE__ ) );
