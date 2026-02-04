@@ -4,7 +4,7 @@
  * Plugin Name: WhatsApp Chat para WordPress
  * Plugin URI: https://santifrias.com
  * Description: Botón flotante de WhatsApp con múltiples cuentas, horarios configurables y personalización avanzada
- * Version: 1.0.1
+ * Version: 1.0.3
  * Author: Santi Frías
  * Author URI: https://santifrias.com
  * Text Domain: sf-whatsapp-chat-wordpress
