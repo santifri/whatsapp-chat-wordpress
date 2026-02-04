@@ -2,6 +2,11 @@
 
 Plugin profesional de WordPress que añade un botón flotante de WhatsApp con múltiples cuentas, horarios configurables y personalización avanzada.
 
+## Descargar e instalar (WordPress)
+- Descarga el ZIP: https://github.com/santifri/whatsapp-chat-wordpress/releases/latest
+- En WordPress: Plugins → Añadir nuevo → Subir plugin → Instalar → Activar
+
+
 ## Características
 
 ### ✨ Funcionalidades principales
