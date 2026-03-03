@@ -203,6 +203,8 @@ class WhatsApp_Admin
         $custom_icon_id = $this->settings->get_custom_icon();
         $custom_icon_url = $custom_icon_id ? wp_get_attachment_image_url($custom_icon_id, 'thumbnail') : '';
         $disclaimer = $this->settings->get_disclaimer();
+        $modal_title = $this->settings->get_modal_title();
+        $modal_subtitle = $this->settings->get_modal_subtitle();
         $icon_position = $this->settings->get_icon_position();
         $margin_bottom = $this->settings->get_margin_bottom();
         $margin_side = $this->settings->get_margin_side();
@@ -258,6 +260,14 @@ class WhatsApp_Admin
         // Guardar disclaimer
         $disclaimer = isset($_POST['disclaimer']) ? wp_unslash($_POST['disclaimer']) : '';
         $this->settings->save_disclaimer($disclaimer);
+
+        // Guardar título del modal
+        $modal_title = isset($_POST['modal_title']) ? sanitize_text_field(wp_unslash($_POST['modal_title'])) : '';
+        $this->settings->save_modal_title($modal_title);
+
+        // Guardar subtítulo del modal
+        $modal_subtitle = isset($_POST['modal_subtitle']) ? sanitize_text_field(wp_unslash($_POST['modal_subtitle'])) : '';
+        $this->settings->save_modal_subtitle($modal_subtitle);
 
         // Guardar posición del icono
         $icon_position = isset($_POST['icon_position']) ? sanitize_text_field(wp_unslash($_POST['icon_position'])) : 'bottom-right';

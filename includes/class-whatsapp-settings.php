@@ -39,6 +39,20 @@ class WhatsApp_Settings
     const OPTION_DISCLAIMER = 'whatsapp_flotante_disclaimer';
 
     /**
+     * Nombre de la opción para el título del modal
+     *
+     * @var string
+     */
+    const OPTION_MODAL_TITLE = 'whatsapp_flotante_modal_title';
+
+    /**
+     * Nombre de la opción para el subtítulo del modal
+     *
+     * @var string
+     */
+    const OPTION_MODAL_SUBTITLE = 'whatsapp_flotante_modal_subtitle';
+
+    /**
      * Nombre de la opción para la posición del icono
      *
      * @var string
@@ -304,6 +318,50 @@ class WhatsApp_Settings
     {
         $sanitized = wp_kses_post($disclaimer);
         return update_option(self::OPTION_DISCLAIMER, $sanitized);
+    }
+
+    /**
+     * Obtener el título del modal
+     *
+     * @return string Título del modal
+     */
+    public function get_modal_title()
+    {
+        return get_option(self::OPTION_MODAL_TITLE, __('Contacta con nosotros', 'whatsapp-flotante'));
+    }
+
+    /**
+     * Guardar el título del modal
+     *
+     * @param string $title Título del modal
+     * @return bool True si se guardó correctamente
+     */
+    public function save_modal_title($title)
+    {
+        $sanitized = sanitize_text_field($title);
+        return update_option(self::OPTION_MODAL_TITLE, $sanitized);
+    }
+
+    /**
+     * Obtener el subtítulo del modal
+     *
+     * @return string Subtítulo del modal
+     */
+    public function get_modal_subtitle()
+    {
+        return get_option(self::OPTION_MODAL_SUBTITLE, __('Selecciona un contacto para iniciar la conversación:', 'whatsapp-flotante'));
+    }
+
+    /**
+     * Guardar el subtítulo del modal
+     *
+     * @param string $subtitle Subtítulo del modal
+     * @return bool True si se guardó correctamente
+     */
+    public function save_modal_subtitle($subtitle)
+    {
+        $sanitized = sanitize_text_field($subtitle);
+        return update_option(self::OPTION_MODAL_SUBTITLE, $sanitized);
     }
 
     /**

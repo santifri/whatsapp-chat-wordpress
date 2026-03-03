@@ -273,15 +273,31 @@ if (!defined('WPINC')) {
             </button>
         </div>
 
-        <!-- Sección de disclaimer -->
+        <!-- Sección de textos del modal y disclaimer -->
         <div class="wf-section">
-            <h2><?php _e('Aviso legal / Disclaimer', 'whatsapp-flotante'); ?></h2>
+            <h2><?php _e('Textos del Modal', 'whatsapp-flotante'); ?></h2>
             <p class="description">
-                <?php _e('Texto opcional que se mostrará en el modal de WhatsApp (por ejemplo, información sobre protección de datos).', 'whatsapp-flotante'); ?>
+                <?php _e('Personaliza los textos que se muestran en el modal de WhatsApp.', 'whatsapp-flotante'); ?>
             </p>
 
-            <textarea name="disclaimer" id="disclaimer" rows="4"
-                class="large-text"><?php echo esc_textarea($disclaimer); ?></textarea>
+            <div class="wf-field">
+                <label for="modal_title"><?php _e('Título del modal', 'whatsapp-flotante'); ?></label>
+                <input type="text" name="modal_title" id="modal_title" value="<?php echo esc_attr($modal_title); ?>" class="large-text">
+                <p class="description"><?php _e('Texto que aparece como título en el encabezado del modal.', 'whatsapp-flotante'); ?></p>
+            </div>
+
+            <div class="wf-field">
+                <label for="modal_subtitle"><?php _e('Subtítulo del modal', 'whatsapp-flotante'); ?></label>
+                <input type="text" name="modal_subtitle" id="modal_subtitle" value="<?php echo esc_attr($modal_subtitle); ?>" class="large-text">
+                <p class="description"><?php _e('Texto instructivo que aparece encima de la lista de contactos.', 'whatsapp-flotante'); ?></p>
+            </div>
+
+            <div class="wf-field">
+                <label for="disclaimer"><?php _e('Aviso legal / Disclaimer', 'whatsapp-flotante'); ?></label>
+                <textarea name="disclaimer" id="disclaimer" rows="4"
+                    class="large-text"><?php echo esc_textarea($disclaimer); ?></textarea>
+                <p class="description"><?php _e('Texto opcional que se mostrará en el modal de WhatsApp (por ejemplo, información sobre protección de datos).', 'whatsapp-flotante'); ?></p>
+            </div>
         </div>
 
         <?php submit_button(__('Guardar configuración', 'whatsapp-flotante')); ?>
